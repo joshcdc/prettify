@@ -9,14 +9,17 @@ def prettify(json_text):
                 tabs.append(tabs[-1]+1)
             elif json_text[index] == ',':
                 text += ',£'
-                index += 1
+                if json_text[index+1] == ' ':
+                    index += 1
                 tabs.append(tabs[-1])
             elif (json_text[index] == '}' or json_text[index] == ']') and json_text[index+1] != "'":
                 if json_text[index+1] == ',':
                     text += f'£{json_text[index]},£'
                     tabs.append(tabs[-1]-1)
                     tabs.append(tabs[-1])
-                    index += 2
+                    index += 1
+                    if json_text[index+1] == ' ':
+                        index += 1
                 else:
                     text += f'£{json_text[index]}'
                     tabs.append(tabs[-1]-1)
