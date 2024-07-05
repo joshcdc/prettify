@@ -1,4 +1,5 @@
 Welcome to JSON prettify! This simple program was made to convert long confusing json strings into simple, readable "prettified" text! 🌵
+Enter the long text into the json_text.txt file, and run the prettify.py program 🐄
 
 ->> LOGS <<-
 -----------
